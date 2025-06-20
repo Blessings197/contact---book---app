@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <tittle>Enter API Key</tittle>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                text-align: center;
+                padding: 50px;
+                background-color: #e0f7fa;
+            }
+            input, button {
+                padding: 10px;
+                font-size: 16px;
+                margin: 10px;
+            }
+        </style>
+    </head>
+
+        <body>
+            <h1>Enter Your API Key</h1>
+            <input type="text" id="apiKeyInput" placeholder="Enter API Key" />
+            <br />
+            <button onclick="saveApiKey()">Submit</button>
+
+            <script>
+                function saveApiKey() {
+                    const key = document.getElementById('apiKeyInput').value;
+                    if (key) {
+                        localStorage.setItem('apiKey', key);
+                        alert('API Key saved! You can now go back to the main app');
+                    } else {
+                        alert('Please enter a valid key.');
+                    }
+                }
+            </script>
+        </body>
+</html>

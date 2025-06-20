@@ -1,0 +1,84 @@
+/* Reset defult margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Body styling */
+body {
+    background: linear-gradient(to right, #e0f7fa, #ffffff);
+    color: #333;
+    padding: 20px;
+}
+
+/* Header tittle */
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    color: #006064;
+}
+
+/* Contact list container */
+.contact-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Individual contact card */
+.contact-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: scale(1.05);
+}
+
+/* Avatar image */
+.contact-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+/* Contact name */
+.contact-card h3 {
+    margin: 10px 0 5px;
+    font-size: 1.2rem;
+}
+
+/* Contact email */
+.contact-card p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Buttons */
+button {
+    margin: 20px auto 0;
+    display: block;
+    padding: 10px 20px;
+    background-color: #006064;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #004d4d;
+}
