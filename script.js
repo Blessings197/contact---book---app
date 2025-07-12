@@ -14,14 +14,13 @@ document.addEventListener("DOMContentLoader", () => {
         contactList.innerHTML = "<p>Loading contacts...</p>";
 
         // Fetch data from API
-        fetch(`${rootPath}contacts`)
+        fetch(rootPath + "controller/get-contacts" + apiKey)
+        .then(response => response.json())
         .then(response => {
-            if(!response.ok) {
-                throw new Error("Failed to fetch contacts.");
-            }
-            return response.json();
+            displayOutput(data);
         })
-        .then(data => {
+        .catch(error => {
+            console.error("Failed to fetch contacts:", error);
             // Clear and populate contact list
             contactList.innerHTML = "";
 
