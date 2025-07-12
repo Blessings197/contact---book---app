@@ -9,18 +9,26 @@ document.addEventListener("DOMContentLoader", () => {
     const contactList = document.getElementById("contact-list");
 
     // Create a function to load contacts
-    function loadContacts() {
+    function fetchContacts() {
         // Clear previous content
-        contactList.innerHTML = "<p>Loading contacts...</p>";
+        document.getElementById("table").textContent = "Loading contacts...";
 
         // Fetch data from API
-        fetch(rootPath + "controller/get-contacts" + apiKey)
-        .then(response => response.json())
+        fetch(rootPath + "controller/get-contacts/" + apiKey)
         .then(response => {
+           if (! response.ok) {
+            throw new Error("HTTP " + response.status):
+        }
+        return response.json();
+        })
+        .then(data => {
             displayOutput(data);
         })
         .catch(error => {
-            console.error("Failed to fetch contacts:", error);
+            document.getElementById("table").textContent = "Failed to load contacts.";
+            console.error("Fetch error:", error);
+        });
+    }
             // Clear and populate contact list
             contactList.innerHTML = "";
 
